@@ -1,6 +1,6 @@
 # Tika
 
-Functional programming
+Javascript functional programming practice
 
 ## Currying
 
@@ -14,6 +14,20 @@ tika.curry(function(a, b) {
 tika.curry(function(a, b) {
   return a + b;
 })(1)(2); // => 3
+```
+
+## Curried functions
+
+Get
+```
+tika.get("foo")({ foo: "bar" }) // => bar
+```
+
+Reducer
+```
+tika.reduce(function(a, b) {
+  return a + b;
+})(0)([1, 1, 1]) // => 3
 ```
 
 # license
