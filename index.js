@@ -18,6 +18,10 @@ exports.curry = function(fn) {
   };
 };
 
+exports.get = this.curry(function(key, obj) {
+  return obj[key];
+});
+
 exports.reduce = this.curry(function(fn, init, arr) {
   return arr.reduce(fn, init);
 });
