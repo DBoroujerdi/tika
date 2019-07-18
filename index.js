@@ -1,14 +1,23 @@
-function _curry(fn, acc) {
-  return function() {
-    const acc2 = acc.concat(...arguments);
-    if (acc2.length === fn.length) {
-      return fn.apply(null, acc2);
-    } else {
-      return _curry(fn, acc2);
-    }
-  };
-}
-
 exports.curry = function(fn) {
-  return _curry(fn, []);
+  function rec(args) {
+    if (args.length === 0) {
+      return fn.apply(null);
+    }
+
+    if (args.length === fn.length) {
+      return fn.apply(null, args);
+    }
+
+    return function() {
+      return rec([...args, ...arguments]);
+    };
+  }
+
+  return function() {
+    return rec([...arguments]);
+  };
 };
+
+exports.reduce = this.curry(function(fn, init, arr) {
+  return arr.reduce(fn, init);
+});
