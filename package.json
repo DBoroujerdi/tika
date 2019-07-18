@@ -1,0 +1,15 @@
+{
+  "name": "tika",
+  "version": "1.0.0",
+  "description": "Functional programming",
+  "main": "index.js",
+  "author": "Daniel Boroujerdi",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test": "tap"
+  },
+  "devDependencies": {
+    "tap": "^14.4.2"
+  }
+}
